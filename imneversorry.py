@@ -4,13 +4,7 @@ from argparse import ArgumentParser
 import importlib
 import logging
 
-import initdb
-import rips
-import teekkari
-import valitsin
-import oppija
-import quote
-import mainari
+import ukko
 
 # Add valid command line arguments
 arg_parser = ArgumentParser()
@@ -24,16 +18,9 @@ if args.verbose:
 cfg = ConfigParser()
 cfg.read('env.cfg')
 
-initdb.initdb()
+vit = ukko.Ukko()
 
-rir = rips.Rips()
-vit = teekkari.Teekkari()
-vai = valitsin.Valitsin()
-opi = oppija.Oppija()
-quo = quote.Quote()
-mc = mainari.Mainari(cfg['MINECRAFT']['server'], cfg['MINECRAFT']['game_ops'], cfg['MINECRAFT']['server_admins'], cfg['MINECRAFT']['use_ip'])
-
-objects = [rir, vit, vai, opi, quo, mc]
+objects = [vit]
 
 def allMessages(bot, update):
     for obj in objects:
