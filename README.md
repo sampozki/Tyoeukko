@@ -1,6 +1,6 @@
-# imneversorry
+# TYOEUKKO
 
-Another Telegram-bot made for memeing.
+Another Telegram-bot made for memeing and moving dirt.
 
 - Get API-token from [@botfather](https://telegram.me/botfather) and enter it to env.cfg
 - Enter the necessary Minecraft server data to env.cfg.
