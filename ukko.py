@@ -50,3 +50,5 @@ class Ukko:
                 self.getTEK(bot, update)
             elif 'abb' in msg.text.lower():
                 self.getABB(bot, update)
+            elif '🅰️🅱️🅱️' in msg.text.lower():
+                self.getABB(bot, update)
