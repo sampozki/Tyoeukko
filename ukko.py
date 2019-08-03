@@ -17,7 +17,7 @@ class Ukko:
 
     def handleHakemus(self, bot, update, args=''):
         if random.randint(0, 9) == 0:
-            bot.sendMessage(chat_id=update.message.chat_id, text='hyy-vä')
+            bot.sendMessage(chat_id=update.message.chat_id, text='Soraahan tuo tahtoisi :)')
         else:
             bot.sendMessage(chat_id=update.message.chat_id, text='tapan sut')
 
@@ -34,9 +34,16 @@ class Ukko:
             bot.sendMessage(chat_id=update.message.chat_id, text=random.choice(huumori))
 
     def getABB(self, bot, update, args=''):
-        print("lol")
-        stiksut = ["CAADBAADTAADiR7LDefZ-ip0q9ZtAg","CAADBAADNgADiR7LDWx2U5l4lHtZAg", "CAADBAADSwADiR7LDctHDtCmX288Ag","CAADBAADKgADiR7LDSt7kRS0nxjVAg"]
+        stiksut = ["CAADBAADKgADiR7LDSt7kRS0nxjVAg", "CAADBAADSwADiR7LDctHDtCmX288Ag", "CAADBAADNgADiR7LDWx2U5l4lHtZAg", "CAADBAADTAADiR7LDefZ-ip0q9ZtAg"]
         bot.sendSticker(chat_id=update.message.chat_id, sticker=random.choice(stiksut))
+
+    def gettasky(self, bot, update, args=''):
+        stiksut = ["CAADBAADFAAD3ekjF7eBdhX6XMD6Ag", "CAADBAADEwAD3ekjF_83pyeNMoKHAg"]
+        bot.sendSticker(chat_id=update.message.chat_id, sticker=random.choice(stiksut))
+
+    def toihin(self, bot, update, args=''):
+        vastaus = ['Oikeisiin TÖI-HIN!', 'Menisit sinäkin TÖI-HIN!', 'Sinäkin teekkaripelle siellä: T Ö I H I N!!!', 'TÖY_-HIIHIHIIIN']
+        bot.sendMessage(chat_id=update.message.chat_id, text=random.choice(vastaus))
 
     def messageHandler(self, bot, update):
         msg = update.message
@@ -50,5 +57,9 @@ class Ukko:
                 self.getTEK(bot, update)
             elif 'abb' in msg.text.lower():
                 self.getABB(bot, update)
-            elif '🅰️🅱️🅱️' in msg.text.lower():
+            elif '🅰️🅱️🅱️' in msg.text:
                 self.getABB(bot, update)
+            elif 'tasky' in msg.text.lower():
+                self.gettasky(bot, update)
+            elif re.match(r'töihin|töi-hin|hommiin|homs|töy|töi|oikeisiin|menisit|vätys', msg.text.lower()):
+                self.toihin(bot, update)
