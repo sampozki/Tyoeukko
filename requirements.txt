@@ -1,4 +1,4 @@
 emoji==0.5.2
 python_telegram_bot==11.1.0
-requests==2.12.4
+requests==2.20.0
 telegram==0.0.1
